@@ -1,8 +1,10 @@
 import React from 'react'
 
 function Gantiwarna() {
+    const [warna, setwarna] = useState(second)
+    
     return (
-        <div className='text-[#25db25]'>Gantiwarna</div>
+        <div className='text-[#25db25] text-[8rem] font-[800]'>Gantiwarna</div>
     )
 }
 
