@@ -1,18 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
-import Gantiwarna from './pages/Gantiwarna';
-import Acontoh from './pages/Acontoh';
+import Daftar from './presensi/Daftar';
 import Hadir from './presensi/Hadir';
-import User from './presensi/User';
 
 function App() {
   return (
-    <div className='grid grid-cols-2'>
-      {/* <Gantiwarna /> */}
-      {/* <Acontoh /> */}
+    <div className='grid grid-cols-2' >
       < Hadir />
-      < User />
-
+      < Daftar />
     </div>
   );
 }
@@ -20,4 +14,4 @@ function App() {
 export default App;
 
 
-// 
+// className='grid grid-cols-2'
