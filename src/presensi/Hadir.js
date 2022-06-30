@@ -18,7 +18,7 @@ function Hadir() {
     const siswaLogin = siswa.find(x => x.nama === nama)
     const tanggal = dayjs().format('DD:MM:YYYY');
     const masuk = dayjs().format('HH:mm:ss')
-
+    console.log("peyek");
     if (siswaLogin) {
       const siswaAbsen = absen.find(x => x.nama === nama && x.tanggal === tanggal)
       console.log("0");
@@ -119,7 +119,7 @@ function Hadir() {
           </div>
         })}
       </div>
-      
+
     </div>
   )
 
