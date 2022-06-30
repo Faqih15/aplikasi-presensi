@@ -3,12 +3,37 @@ import React, { useState } from 'react'
 function Daftar() {
     const [daftar, setdaftar] = useState([])
 
+    const mendaftar = (event) => {
+        event.preventDefault()
+        const user = event.target.name.value
+        const siswa = JSON.parse(localStorage.getItem("siswa"))
+        if (user) {
+            if (siswa) {
+                const userbaru = { nama: user }
+                const userlama = JSON.parse(localStorage.getItem("siswa"))
+                userlama.push(userbaru)
+                setdaftar(userlama)
+                localStorage.setItem("siswa", JSON.stringify(userlama))
+            } else {
+                const userbaru = { nama: user }
+                const userlama = [...daftar]
+                userlama.push(userbaru)
+                setdaftar(userlama)
+                localStorage.setItem("siswa", JSON.stringify(userlama))
+            }
+            event.target.name.value = ""
+
+        } else { alert("anda belum mengisi nama") }
+    }
+
     return (
-        <div className='py-2 px-4'>
+        <div className='p-2 m-2 md:py-2 md:px-4 border-blue-700 border-4'>
             <div className='py-2 px-2 text-black font-extrabold text-[1rem]'>Daftar</div>
 
             <div>
-                <form className='text-2xl my-2 mx-2'
+                <form 
+                className='text-2xl my-2 mx-2'
+                    onSubmit={mendaftar}
                 >
                     <label className="block">
                         <div className='py-2'>
@@ -29,10 +54,10 @@ function Daftar() {
                     </label>
 
                     <div className='mr-4'>
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 text-xl my-4 
+                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 text-xl my-4 
                             border border-blue-700 rounded"
                             type="submit">
-                            Login
+                            Daftar
                         </button>
                     </div>
                 </form>

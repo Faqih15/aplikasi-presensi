@@ -4,7 +4,7 @@ import Hadir from './presensi/Hadir';
 
 function App() {
   return (
-    <div className='grid grid-cols-2' >
+    <div className='grid grid-cols-1 md:grid-cols-2' >
       < Hadir />
       < Daftar />
     </div>

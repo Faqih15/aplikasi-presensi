@@ -10,7 +10,7 @@ function Hadir() {
   const localSiswa = localStorage.getItem("siswa")
   const localAbsen = localStorage.getItem("absen")
   const [siswa] = useState(JSON.parse(localSiswa) || [])
-  const [absen, setAbsen] = useState(JSON.parse(localAbsen) || [])-
+  const [absen, setAbsen] = useState(JSON.parse(localAbsen) || [])
 
   const login = (event) => {
     event.preventDefault()
